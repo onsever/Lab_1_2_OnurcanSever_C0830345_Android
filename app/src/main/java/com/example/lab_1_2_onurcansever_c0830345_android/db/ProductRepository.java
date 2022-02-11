@@ -35,4 +35,14 @@ public class ProductRepository {
             productDao.update(product);
         });
     }
+
+    public void updateProductById(int id, String name, String description, double price, double latitude, double longitude) {
+        ProductDatabase.databaseWriteExecutor.execute(() -> {
+            productDao.updateProduct(id, name, description, price, latitude, longitude);
+        });
+    }
+
+    public LiveData<List<Product>> searchProduct(String name) {
+        return productDao.searchProduct(name);
+    }
 }

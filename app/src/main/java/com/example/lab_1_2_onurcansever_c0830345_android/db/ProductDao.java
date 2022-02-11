@@ -28,11 +28,14 @@ public interface ProductDao {
     @Update
     void update(Product product);
 
-    @Query("UPDATE product_table SET name = :name, description = :description, price = :price, latitude = :latitude, longitude = :longitude")
-    int updateProduct(String name, String description, double price, double latitude, double longitude);
+    @Query("UPDATE product_table SET name = :name, description = :description, price = :price, latitude = :latitude, longitude = :longitude WHERE id = :id")
+    int updateProduct(int id, String name, String description, double price, double latitude, double longitude);
 
     @Query("SELECT * FROM product_table ORDER BY name")
     LiveData<List<Product>> getAllProducts();
+
+    @Query("SELECT * FROM product_table WHERE name LIKE '%' || :name || '%'")
+    LiveData<List<Product>> searchProduct(String name);
 
 
 }

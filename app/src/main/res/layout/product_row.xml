@@ -8,6 +8,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:padding="10dp"
+        android:gravity="center_vertical"
         android:orientation="vertical"
         android:layout_gravity="center">
 
@@ -25,7 +27,7 @@
             android:id="@+id/product_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$1499.99"
+            android:text="@string/product_price"
             android:textColor="@color/design_default_color_primary"
             android:textStyle="bold"/>
 
@@ -41,32 +43,15 @@
             android:id="@+id/product_longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="13.45"
+            android:text="@string/longitude"
             android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/product_latitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="13.45"
+            android:text="@string/latitude"
             android:textColor="@color/black"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical">
-
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/design_default_color_error"
-            android:text="Delete"/>
 
     </LinearLayout>
 
