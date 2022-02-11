@@ -79,10 +79,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapView.setOnMapLongClickListener(latLng -> {
             MarkerOptions options = new MarkerOptions()
                     .position(latLng)
-                    .title("Product Location");
+                    .title("Product location");
 
             customMarker = mapView.addMarker(options);
-
+            chosenLongitude = latLng.longitude;
+            chosenLatitude = latLng.latitude;
         });
 
     }
@@ -96,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onLocationResult(@NonNull LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                //mMap.clear();
                 Location location = locationResult.getLastLocation();
                 LatLng userLocation = new LatLng(location.getLatitude(), location.getLongitude());
 
